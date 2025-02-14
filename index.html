@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: white;
+            padding: 10px 20px;
+            position: relative;
+            border-radius: 20px;
+            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* Smooth curved shadow */
+            z-index: 1000;
+            width: 90%;
+            margin: auto;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: black;
+            text-transform: uppercase;
+            display: flex;
+            flex-direction: column;
+        }
+        .logo div:first-child {
+            font-size: 16px;
+            line-height: 1;
+        }
+        .logo span {
+            color: #e74c3c;
+            font-size: 35px;
+            font-weight: bold;
+        }
+        .nav-container {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            padding: 0;
+            flex-wrap: wrap;
+        }
+        .nav-links li {
+            position: relative;
+            cursor: pointer;
+            color: #e74c3c;
+            font-weight: bold;
+            padding: 10px;
+            user-select: none;
+        }
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 40px;
+            left: 0;
+            background: white;
+            border-radius: 12px;
+            border: 1px solid black;
+            list-style: none;
+            padding: 10px;
+            width: 150px;
+            z-index: 1000;
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .dropdown li {
+            padding: 5px;
+            cursor: pointer;
+            color: black;
+        }
+        .nav-links li.active .dropdown {
+            display: block;
+        }
+        .contact-button {
+            padding: 10px 20px;
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .contact-button:hover {
+            background-color: #c0392b;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                width: 100%;
+                align-items: center;
+            }
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+                text-align: center;
+            }
+            .contact-button {
+                margin-top: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                width: 100%;
+                border-radius: 0;
+                box-shadow: none;
+                border-bottom: 2px solid #e74c3c;
+            }
+            .logo {
+                font-size: 18px;
+            }
+            .logo span {
+                font-size: 28px;
+            }
+            .nav-links li {
+                font-size: 14px;
+            }
+            .contact-button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <div>MGMT</div>
+            <div>EDU<span>X</span>PERT</div>
+        </div>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li class="menu-item">Latest Jobs &#9662;
+                    <ul class="dropdown">
+                        <li>Government Jobs</li>
+                        <li>Private Jobs</li>
+                    </ul>
+                </li>
+                <li class="menu-item">Courses &#9662;
+                    <ul class="dropdown">
+                        <li>Online Courses</li>
+                        <li>Offline Courses</li>
+                    </ul>
+                </li>
+                <li class="menu-item">Walk-ins &#9662;
+                    <ul class="dropdown">
+                        <li>Upcoming Walk-ins</li>
+                        <li>Past Walk-ins</li>
+                        <li>Preparation</li>
+                    </ul>
+                </li>
+                <li class="menu-item">Admissions &#9662;
+                    <ul class="dropdown">
+                        <li>Undergraduate</li>
+                        <li>Postgraduate</li>
+                        <li>PhD Programs</li>
+                    </ul>
+                </li>
+            </ul>
+            <button class="contact-button">Contact Us</button>
+        </div>
+    </nav>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuItems = document.querySelectorAll(".menu-item");
+
+            function closeAllDropdowns() {
+                menuItems.forEach(item => item.classList.remove("active"));
+            }
+
+            menuItems.forEach(item => {
+                item.addEventListener("click", function (event) {
+                    event.stopPropagation();
+                    closeAllDropdowns();
+                    this.classList.toggle("active");
+                });
+
+                item.addEventListener("touchstart", function (event) {
+                    event.stopPropagation();
+                    closeAllDropdowns();
+                    this.classList.toggle("active");
+                });
+            });
+
+            document.addEventListener("click", closeAllDropdowns);
+            document.addEventListener("touchstart", closeAllDropdowns);
+        });
+    </script>
+</body>
+</html>
