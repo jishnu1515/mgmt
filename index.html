@@ -3,206 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Job Portal</title>
+    <meta name="description" content="Explore the finest collection of gold, silver, and diamond jewellery at Vijaya Durga Jewellery in Penugonda. Custom orders, repairs, and gold exchange services available.">
+    <title>Vijaya Durga Jewellery</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js" crossorigin="anonymous"></script>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: white;
-            margin: 0;
-            padding: 0;
+            background: linear-gradient(to right, #ffafbd, #ffc3a0);
         }
         .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: white;
-            padding: 10px 20px;
-            position: relative;
-            border-radius: 20px;
-            box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3); /* Smooth curved shadow */
-            z-index: 1000;
-            width: 90%;
-            margin: auto;
-            margin-top: 10px;
-            flex-wrap: wrap;
+            background: linear-gradient(to right, #ff9966, #ff5e62);
         }
-        .logo {
-            font-size: 24px;
+        .nav-link {
+            color: #fff !important;
             font-weight: bold;
-            color: black;
-            text-transform: uppercase;
-            display: flex;
-            flex-direction: column;
+            font-size: 18px;
         }
-        .logo div:first-child {
-            font-size: 16px;
-            line-height: 1;
+        .nav-link:hover {
+            color: #ffdf00 !important;
         }
-        .logo span {
-            color: #e74c3c;
-            font-size: 35px;
-            font-weight: bold;
+        .card {
+            box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            padding: 20px;
+            height: 200px;
         }
-        .nav-container {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-            padding: 0;
-            flex-wrap: wrap;
-        }
-        .nav-links li {
-            position: relative;
-            cursor: pointer;
-            color: #e74c3c;
-            font-weight: bold;
-            padding: 10px;
-            user-select: none;
-        }
-        .dropdown {
-            display: none;
-            position: absolute;
-            top: 40px;
-            left: 0;
-            background: white;
-            border-radius: 12px;
-            border: 1px solid black;
-            list-style: none;
-            padding: 10px;
-            width: 150px;
-            z-index: 1000;
-            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-        }
-        .dropdown li {
-            padding: 5px;
-            cursor: pointer;
-            color: black;
-        }
-        .nav-links li.active .dropdown {
-            display: block;
-        }
-        .contact-button {
-            padding: 10px 20px;
-            background-color: #e74c3c;
-            color: white;
+        .btn-primary {
+            background: linear-gradient(to right, #ff7eb3, #ff758c);
             border: none;
-            border-radius: 5px;
-            cursor: pointer;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(to right, #ff5e62, #ff9966);
+        }
+        .social-icons {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .social-icons a {
+            margin: 0 10px;
+            font-size: 24px;
+            color: #000;
+            text-decoration: none;
+        }
+        .social-icons p {
+            display: inline-block;
+            margin-left: 10px;
             font-weight: bold;
-        }
-        .contact-button:hover {
-            background-color: #c0392b;
-        }
-
-        /* Media Queries */
-        @media (max-width: 768px) {
-            .nav-container {
-                flex-direction: column;
-                width: 100%;
-                align-items: center;
-            }
-            .nav-links {
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-                text-align: center;
-            }
-            .contact-button {
-                margin-top: 10px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .navbar {
-                width: 100%;
-                border-radius: 0;
-                box-shadow: none;
-                border-bottom: 2px solid #e74c3c;
-            }
-            .logo {
-                font-size: 18px;
-            }
-            .logo span {
-                font-size: 28px;
-            }
-            .nav-links li {
-                font-size: 14px;
-            }
-            .contact-button {
-                width: 100%;
-            }
         }
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">
-            <div>MGMT</div>
-            <div>EDU<span>X</span>PERT</div>
-        </div>
-        <div class="nav-container">
-            <ul class="nav-links">
-                <li class="menu-item">Latest Jobs &#9662;
-                    <ul class="dropdown">
-                        <li>Government Jobs</li>
-                        <li>Private Jobs</li>
-                    </ul>
-                </li>
-                <li class="menu-item">Courses &#9662;
-                    <ul class="dropdown">
-                        <li>Online Courses</li>
-                        <li>Offline Courses</li>
-                    </ul>
-                </li>
-                <li class="menu-item">Walk-ins &#9662;
-                    <ul class="dropdown">
-                        <li>Upcoming Walk-ins</li>
-                        <li>Past Walk-ins</li>
-                        <li>Preparation</li>
-                    </ul>
-                </li>
-                <li class="menu-item">Admissions &#9662;
-                    <ul class="dropdown">
-                        <li>Undergraduate</li>
-                        <li>Postgraduate</li>
-                        <li>PhD Programs</li>
-                    </ul>
-                </li>
-            </ul>
-            <button class="contact-button">Contact Us</button>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#"><b>VIJAYA DURGA JEWELLERY</b></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#jewellery">Jewellery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
+    
+    <header class="text-center p-5">
+        <h1>Welcome to Vijaya Durga Jewellery</h1>
+        <p>Discover the finest collection of Gold, Silver, and Diamond Jewellery</p>
+    </header>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const menuItems = document.querySelectorAll(".menu-item");
+    <section id="jewellery" class="container my-5">
+        <h2 class="text-center mb-4">Our Collection</h2>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <h5 class="card-title">Gold Jewellery</h5>
+                    <p class="card-text">Intricate craftsmanship.</p>
+                    <p class="card-text">Timeless traditional designs.</p>
+                    <p class="card-text">Perfect for all occasions.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <h5 class="card-title">Silver Jewellery</h5>
+                    <p class="card-text">Elegant handcrafted pieces.</p>
+                    <p class="card-text">Affordable and stylish.</p>
+                    <p class="card-text">Ideal for daily wear.</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <h5 class="card-title">Diamond Jewellery</h5>
+                    <p class="card-text">Sparkling elegance.</p>
+                    <p class="card-text">Unique and luxurious designs.</p>
+                    <p class="card-text">Symbol of sophistication.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="contact" class="p-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Contact Us</h2>
+            <p class="text-center">Address: Gandhi Bommala Center, Penugonda, West Godavari District</p>
+            <p class="text-center">Phone: 9701652165, 9440933592</p>
+            <p class="text-center">Owners: Nuli Leela Krishna Rao & Nuli Naveen Kumar</p>
+            <div class="social-icons">
+                <a href="https://wa.me/919701652165" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                <p>WhatsApp</p>
+                <a href="https://www.instagram.com/vijayadurga_jewellery" target="_blank"><i class="fab fa-instagram"></i></a>
+                <p>Instagram</p>
+            </div>
+        </div>
+    </section>
 
-            function closeAllDropdowns() {
-                menuItems.forEach(item => item.classList.remove("active"));
-            }
-
-            menuItems.forEach(item => {
-                item.addEventListener("click", function (event) {
-                    event.stopPropagation();
-                    closeAllDropdowns();
-                    this.classList.toggle("active");
-                });
-
-                item.addEventListener("touchstart", function (event) {
-                    event.stopPropagation();
-                    closeAllDropdowns();
-                    this.classList.toggle("active");
-                });
-            });
-
-            document.addEventListener("click", closeAllDropdowns);
-            document.addEventListener("touchstart", closeAllDropdowns);
-        });
-    </script>
+    <footer class="text-white text-center p-3" style="background: linear-gradient(to right, #ff5e62, #ff9966);">
+        <p>&copy; 2025 Vijaya Durga Jewellery. All Rights Reserved.</p>
+    </footer>
 </body>
 </html>
